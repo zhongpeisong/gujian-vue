@@ -97,6 +97,8 @@
 
 <script>
   import ALayoutSider from "ant-design-vue/es/layout/Sider";
+  import Config from "@/Config";
+
   export default {
     name: "Menu",
     components: {ALayoutSider},
@@ -106,6 +108,10 @@
         rootSubmenuKeys: ['sub1', 'sub2', 'sub3', 'sub4', 'sub5', 'sub6'],
         openKeys: ['sub1'],
         dateNow: '',
+        userData:{
+          userName:'',
+          password:'',
+        }
       }
     },
 
@@ -130,12 +136,9 @@
 
       onOpen: function () {
         this.visible = true;
+        this.$http.get()
       },
 
-
-      getDateNow:function () {
-
-      }
 
     },
   }
